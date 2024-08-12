@@ -77,11 +77,15 @@ WSGI_APPLICATION = "fashion.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": 'hnm',
+        "NAME": 'hmn',
         'USER' : 'root',
         'PASSWORD':'root1234',
         'HOST' : '127.0.0.1',
-        'PORT' : '3306'
+        'PORT' : '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
     }
 }
 
